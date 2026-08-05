@@ -1,0 +1,20 @@
+{
+  "random_state": 42,
+  "model_rows": 30000,
+  "train_rows": 24000,
+  "test_rows": 6000,
+  "best_representation": "BoW",
+  "best_classifier": "Regressão Logística",
+  "best_f1_macro": 0.9241264358930947,
+  "best_accuracy": 0.9365,
+  "confusion_matrix": [
+    [
+      1598,
+      166
+    ],
+    [
+      215,
+      4021
+    ]
+  ]
+}
