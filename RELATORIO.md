@@ -1,6 +1,6 @@
 # Relatório técnico — baseline clássico de análise de sentimentos
 
-**Autor:** Henrique  
+**Autor:** Henrique Barone  
 **Corpus:** B2W-Reviews01  
 **Tarefa:** classificação binária de sentimentos em português brasileiro
 
@@ -56,7 +56,7 @@ Foram classificados corretamente 1.598 negativos e 4.021 positivos. Houve 166 fa
 
 ## 5. Análise de erros
 
-Os 381 erros do melhor modelo foram inspecionados. Três padrões se destacaram:
+O melhor modelo apresentou 381 erros. Para a análise qualitativa, foi examinada uma amostra reprodutível de falsos positivos e falsos negativos. Três padrões se destacaram:
 
 1. **Contraste e avaliações mistas.** Uma avaliação de 2 estrelas elogia “boa qualidade de som” e “botões úteis”, mas depois critica encaixe, estabilidade e bateria. BoW soma pistas positivas e negativas sem modelar bem qual trecho domina a conclusão.
 2. **Negação e comparação.** Em uma avaliação de 1 estrela, “a fixação [...] sempre foi muito boa” aparece antes de “não dura 20 minutos”. Os termos positivos do contexto comparativo podem superar a crítica atual.
@@ -64,7 +64,11 @@ Os 381 erros do melhor modelo foram inspecionados. Três padrões se destacaram:
 
 Esses casos evidenciam limites clássicos de BoW/TF-IDF: pouca representação de ordem longa, composição, alvo do sentimento, ironia e mudança de polaridade dentro do texto. Bigramas ajudam com expressões locais como “não dura”, mas não resolvem integralmente os fenômenos discursivos.
 
-## 6. Conclusão
+## 6. Limitações
+
+Os resultados correspondem a uma amostra estratificada de 30 mil avaliações e a uma única divisão treino–teste. Portanto, pequenas diferenças entre modelos não devem ser interpretadas como evidência de superioridade estatística. O experimento também não realizou busca de hiperparâmetros, pois o objetivo principal era comparar representações mantendo um baseline clássico e reprodutível.
+
+## 7. Conclusão
 
 O experimento cumpriu o pipeline clássico de NLU e avaliou as dez combinações no mesmo teste isolado. Modelos lineares foram superiores aos ensembles de árvores para os vetores esparsos de alta dimensão. Regressão Logística + BoW é o baseline recomendado para a comparação posterior com sistemas generativos, enquanto TF-IDF + SVM apresentou desempenho quase equivalente e demonstrou que o efeito da ponderação TF-IDF é dependente do classificador.
 

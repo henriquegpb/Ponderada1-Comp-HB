@@ -24,7 +24,7 @@ cells.append(
     nbf.v4.new_markdown_cell(
         """# Baseline clássico de análise de sentimentos — B2W-Reviews01
 
-**Autor:** Henrique  
+**Autor:** Henrique Barone  
 **Tarefa:** NLU — classificação binária de sentimentos  
 **Representações:** Bag of Words (BoW) e TF-IDF  
 **Classificadores:** Naive Bayes, Regressão Logística, SVM, Random Forest e Gradient Boosting
@@ -611,6 +611,8 @@ Os resultados numéricos acima devem ser interpretados em conjunto:
 4. os exemplos indicam limites das representações esparsas: contexto composicional, contraste (`produto bom, entrega péssima`), ironia, textos muito curtos e possível ruído entre nota e comentário.
 
 Este baseline é adequado para a comparação futura com NLG porque tem protocolo explícito, teste isolado, representações clássicas e métricas reproduzíveis. As conclusões consolidadas com os valores executados encontram-se em `RELATORIO.md`.
+
+**Limitação:** os resultados correspondem a uma amostra estratificada de 30 mil avaliações e a uma única divisão treino–teste. Pequenas diferenças entre modelos não devem ser interpretadas como evidência de superioridade estatística; também não foi realizada busca de hiperparâmetros, pois o foco é a comparação das representações.
 
 ### Referências
 
